@@ -21,7 +21,20 @@ public void onEnable()
   public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event)
   {
 	Player p = event.getPlayer();
-    if ((event.getMessage().toLowerCase().startsWith("/plugins ")) || (event.getMessage().toLowerCase().startsWith("/plugins")) || (event.getMessage().toLowerCase().equals("/pl")) || (event.getMessage().toLowerCase().startsWith("/pl ")) || (event.getMessage().toLowerCase().startsWith("/ver")) || (event.getMessage().toLowerCase().startsWith("/gc")) || (event.getMessage().toLowerCase().startsWith("/version")) || (event.getMessage().toLowerCase().startsWith("/help")) || (event.getMessage().toLowerCase().startsWith("/?"))) {
+    if ((event.getMessage().toLowerCase().startsWith("/plugins ")) ||
+    		(event.getMessage().toLowerCase().startsWith("/bukkit")) ||
+    		(event.getMessage().toLowerCase().startsWith("/bukkit:pl")) ||
+    		(event.getMessage().toLowerCase().startsWith("/bukkit:plugins")) ||
+    		(event.getMessage().toLowerCase().startsWith("/spigot")) ||
+    		(event.getMessage().toLowerCase().startsWith("/plugins")) ||
+    		(event.getMessage().toLowerCase().equals("/pl")) ||
+    		(event.getMessage().toLowerCase().startsWith("/pl ")) ||
+    		(event.getMessage().toLowerCase().startsWith("/ver")) ||
+    		(event.getMessage().toLowerCase().startsWith("/gc")) ||
+    		(event.getMessage().toLowerCase().startsWith("/version")) ||
+    		(event.getMessage().toLowerCase().startsWith("/help")) ||
+    		(event.getMessage().toLowerCase().startsWith("/?"))) 
+    {
       event.setCancelled(true);
       p.sendMessage("Nie masz uprawnien!");
       if (p.isOp()) {
